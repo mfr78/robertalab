@@ -4,8 +4,8 @@
  * the robot should do.
  */
 define(['robertaLogic.actors', 'robertaLogic.memory', 'robertaLogic.program', 'robertaLogic.gyro', 'util', 'robertaLogic.constants',
-    'simulation.program.builder'
-], function(Actors, Memory, Program, Gyro, UTIL, CONSTANTS, PROGRAM_BUILDER) {
+    'simulation.program.builder', 'guiState.controller'
+], function(Actors, Memory, Program, Gyro, UTIL, CONSTANTS, PROGRAM_BUILDER, GUISTATE_C) {
     var privateMem = new WeakMap();
     var internal = function(object) {
         if (!privateMem.has(object)) {
@@ -49,6 +49,7 @@ define(['robertaLogic.actors', 'robertaLogic.memory', 'robertaLogic.program', 'r
         internal(this).modifiedStmt = false;
         internal(this).repeatStmtExpr = {};
         internal(this).funcioncCalls = new WeakMap();
+        internal(this).setLangUsed = false;
     };
 
     /**
@@ -535,6 +536,7 @@ define(['robertaLogic.actors', 'robertaLogic.memory', 'robertaLogic.program', 'r
         var value = evalExpr(obj, "language");
         if (!isObject(value) && !obj.modifiedStmt) {
             obj.outputCommands.language = value;
+            obj.setLangUsed = true;
         }
     };
 
@@ -544,6 +546,10 @@ define(['robertaLogic.actors', 'robertaLogic.memory', 'robertaLogic.program', 'r
             obj.outputCommands.sayText = {};
             obj.outputCommands.sayText.text = text;
 
+            if (!obj.setLangUsed) {
+                obj.outputCommands.language = GUISTATE_C.getLanguage();
+            }
+            
             if (obj.currentStatement.speed !== undefined && obj.currentStatement.pitch !== undefined) {
                 var speed = evalExpr(obj, "speed");
                 var pitch = evalExpr(obj, "pitch");

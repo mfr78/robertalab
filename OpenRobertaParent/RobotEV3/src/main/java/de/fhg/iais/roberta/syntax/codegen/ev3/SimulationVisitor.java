@@ -49,7 +49,7 @@ public class SimulationVisitor extends RobotSimulationVisitor<Void> {
     private static final String MOTOR_LEFT = "CONST.MOTOR_LEFT";
     private static final String MOTOR_RIGHT = "CONST.MOTOR_RIGHT";
 
-    private ILanguage language;
+    private final ILanguage language;
 
     private SimulationVisitor(Configuration brickConfiguration, ILanguage language) {
         super(brickConfiguration);
@@ -239,12 +239,6 @@ public class SimulationVisitor extends RobotSimulationVisitor<Void> {
     @Override
     public Void visitSayTextAction(SayTextAction<Void> sayTextAction) {
         String end = createClosingBracket();
-        // this.sb.append("createSetLanguageAction(createConstant(CONST.STRING_CONST,
-        // \'");
-        // this.sb.append(this.getLanguageString(this.language));
-        // this.sb.append("\')");
-        // this.sb.append(end);
-        // this.visitExprStmt();
         this.sb.append("createSayTextAction(");
         if ( !sayTextAction.getMsg().getKind().hasName("STRING_CONST") ) {
             this.sb.append("String(");
@@ -260,7 +254,6 @@ public class SimulationVisitor extends RobotSimulationVisitor<Void> {
             this.sb.append(",");
             sayTextAction.getPitch().visit(this);
         }
-        // this.sb.append(")");
         this.sb.append(end);
         return null;
     }
