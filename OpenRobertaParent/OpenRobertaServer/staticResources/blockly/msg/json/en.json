@@ -1,55 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		"lastupdated": "2018-03-21 16:54:50.204886",
-=======
-=======
->>>>>>> #745 chanhed arduino configuration blokcs so they would be always enabled
-=======
->>>>>>> #756 implmented Arduino Configuration
-=======
->>>>>>> #756 added hardware visitor that extracts information about used configuration blocks
-=======
->>>>>>> #755, #756 implemented moisture sensor, added test code generation for moisture, ultrasonic and light sensors
-<<<<<<< HEAD
-		"lastupdated": "2018-03-14 17:18:07.865391",
-=======
-		"lastupdated": "2018-02-07 16:55:31.254062",
->>>>>>> #756 added base Uno files, main configuration block, most of the sensor/actor configuration blocks
-<<<<<<< HEAD
->>>>>>> #756 added base Uno files, main configuration block, most of the sensor/actor configuration blocks
-=======
-=======
-		"lastupdated": "2018-02-16 13:54:35.119105",
->>>>>>> #745 chanhed arduino configuration blokcs so they would be always enabled
-<<<<<<< HEAD
->>>>>>> #745 chanhed arduino configuration blokcs so they would be always enabled
-=======
-=======
-		"lastupdated": "2018-02-21 12:28:51.856000",
->>>>>>> #756 implmented Arduino Configuration
-<<<<<<< HEAD
->>>>>>> #756 implmented Arduino Configuration
-=======
-=======
-		"lastupdated": "2018-02-28 14:24:11.875979",
->>>>>>> #756 added hardware visitor that extracts information about used configuration blocks
-<<<<<<< HEAD
->>>>>>> #756 added hardware visitor that extracts information about used configuration blocks
-=======
-=======
-		"lastupdated": "2018-03-01 17:37:58.578657",
->>>>>>> #755, #756 implemented moisture sensor, added test code generation for moisture, ultrasonic and light sensors
->>>>>>> #755, #756 implemented moisture sensor, added test code generation for moisture, ultrasonic and light sensors
-=======
-		"lastupdated": "2018-03-16 13:07:19.406505",
->>>>>>> #755 added test names for the sensor blocks in program
+		"lastupdated": "2018-03-26 11:45:43.920427",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -1325,35 +1277,30 @@
 	"SENSOR_GESTURE_SHAKE_GETSAMPLE_TOOLTIP": "Returns »true« if it is shaken.",
 	"SENSOR_GESTURE_FREEFALL_GETSAMPLE_TOOLTIP": "Returns »true« if it is free falling.",
 	"RIGHT": "right",
-<<<<<<< HEAD
-<<<<<<< HEAD
-	"LEFT": "left",
-	"ORA_ROBOT_PUSH_RUN_CALLIOPE2016": "Your program »$« is downloaded to Calliope, press the reset button to start it!",
-	"ORA_ROBOT_PUSH_RUN_NXT": "Your program »$« is downloaded to the NXT, start it on the robot!",
-	"ERROR_MISSING_PARAMETER": "An input value is missing!",
-	"ERROR_MISSING_RETURN": "The function return value is missing!"
-=======
-	"LEFT": "left"
->>>>>>> #745 added base Uno files, configuration draft
-=======
 	"LEFT": "left",
 	"ORA_ROBOT_PUSH_RUN_CALLIOPE2016": "Your program »$« is downloaded to Calliope, press the reset button to start it!",
 	"ORA_ROBOT_PUSH_RUN_NXT": "Your program »$« is downloaded to the NXT, start it on the robot!",
 	"OUTPUT": "output",
 	"INPUT": "input",
-	"MOTION_SENSOR": "motion sensor",
-	"POTENTIOMETER": "potentiometer",
+	"SENSOR_MOTION": "motion sensor",
+	"SENSOR_POTENTIOMETER": "potentiometer",
 	"SERVO_MOTOR": "servo motor",
-	"PULSE": "pulse",
+	"SENSOR_PULSE": "pulse sensor",
 	"RELAY": "relay",
-	"HUMIDITY": "humidity",
+	"SENSOR_HUMIDITY": "humidity sensor",
 	"AND": "and",
 	"STEP_MOTOR": "step motor",
-<<<<<<< HEAD
-	"SENSOR_MOISTURE": "moisture sensor"
->>>>>>> #756 added base Uno files, main configuration block, most of the sensor/actor configuration blocks
-=======
 	"SENSOR_MOISTURE": "moisture sensor",
-	"MODE_MOISTURE": "moisture"
->>>>>>> #756 added hardware visitor that extracts information about used configuration blocks
+	"MODE_MOISTURE": "moisture",
+	"SENSOR_ROTATION": "rotation sensor",
+	"SENSOR_DROP": "drop sensor",
+	"SENSOR_RFID": "RFID reader",
+	"ACTION_LCD": "LCD",
+	"ACTION_LCDI2C": "LCD",
+	"ACTION_LED": "LED",
+	"ACTION_PLAY": "play",
+	"ACTION_RELAY": "relay",
+	"ACTION_RGBLED": "RGB LED",
+	"ACTION_STEPMOTOR": "step motor",
+	"ACTION_SERVO": "servo motor"
 }
